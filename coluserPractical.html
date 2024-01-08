@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h2> LEXICAL SCOPE / CLOUSER</h2>
+
+
+    <button id="red">Red</button>
+    <button id="green">Green</button>
+    <button id="yellow">Yello</button>
+    <button id="blue">Blue</button>
+
+
+<script>
+    
+    // document.getElementById('red').addEventListener('click', function(){
+    //     document.body.style.background = "red"
+    // })
+
+
+    // const red = document.getElementById('red');
+    // red.addEventListener('click',function(){
+    //     document.body.style.background = "red";  
+    // })
+
+
+    // const green = document.getElementById('green');
+    // green.addEventListener('click',function(){
+    //     document.body.style.background = "green";
+    // })
+
+
+    // MAKE BY CLOUSER ~~~~~~~~~~~~~~~ 
+
+
+    function onclickHandler(color){
+        // document.body.style.background =`${color}`
+
+         return function (){
+
+                document.body.style.background = `${color}`
+            }
+
+    }
+
+
+    document.getElementById("red").onclick = onclickHandler('red');
+    document.getElementById("green").onclick = onclickHandler('green');
+
+    document.getElementById("yellow").onclick = onclickHandler('yellow');
+    document.getElementById("blue").onclick = onclickHandler('blue');
+
+
+
+</script>
+
+
+
+</body>
+</html>
